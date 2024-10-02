@@ -1,6 +1,6 @@
 import { useRouteError } from "react-router-dom";
 import styled from "styled-components";
-import img from "./assets/boowomp.png";
+import img from "../assets/boowomp.png";
 
 function ErrorPage() {
     const error = useRouteError();

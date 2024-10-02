@@ -2,7 +2,8 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-import ErrorPage from './ErrorPage';
+import ErrorPage from './components/ErrorPage';
+import Navbar from './components/Navbar';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -34,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <div>hello world.</div>,
+    element: <Navbar>hello world.</Navbar>,
     errorElement: <ErrorPage/>,
   }
 ])
