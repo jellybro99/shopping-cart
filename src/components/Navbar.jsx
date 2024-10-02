@@ -2,7 +2,7 @@ import styled from "styled-components";
 import PropTypes from 'prop-types'
 
 
-function Navbar(props) {
+function Navbar() {
     const NavbarStyling = styled.nav`
         height: 48px;
         background-color:green;
@@ -13,7 +13,6 @@ function Navbar(props) {
 
     return (
         <NavbarStyling>
-            {props.children}
         </NavbarStyling>
     )
 }
