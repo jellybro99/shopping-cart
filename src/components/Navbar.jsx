@@ -32,7 +32,7 @@ function Navbar(props) {
                 <Link to="/products">Products</Link>
             </Links>
             <ShoppingCart onClick={() => setShoppingCartDisplay(!shoppingCartDisplay)}/>
-            {shoppingCartDisplay && <ShoppingCartView shopingCart={cart}/>}
+            {shoppingCartDisplay && <ShoppingCartView cart={cart}/>}
         </NavbarStyling>
     )
 }

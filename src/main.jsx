@@ -4,8 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import ErrorPage from './components/ErrorPage';
 import App from './App';
-import HomePage from './components/HomePage';
-import ProductsPage from './components/ProductsPage';
+import HomePage from './components/Home';
+import ProductsPage from './components/Products';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {

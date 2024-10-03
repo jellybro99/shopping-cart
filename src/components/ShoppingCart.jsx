@@ -1,24 +1,34 @@
 import PropTypes from "prop-types"
+import styled from "styled-components";
+import ShoppingCartItem from "./ShoppingCartItem.jsx";
+
+const CartDisplay = styled.div`
+    position:fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 20rem;
+    padding:2rem;
+    background-color:yellow;
+`
+
 
 function ShoppingCartView(props) {
-    const { shoppingCart } = props;
+    const { cart } = props;
 
     return (
-        <div>
+        <CartDisplay>
             <ul>
-                {shoppingCart.map((item) => (
-                    <li key={item.id}>
-                        <h1>{item.name}</h1>
-                    </li>
+                {cart.map((item) => (
+                    <ShoppingCartItem key={item.id} item={item}/>
                 ))}
             </ul>
             <button>Check Out</button>
-        </div>
+        </CartDisplay>
     )
 }
 
 ShoppingCartView.propTypes = {
-    shoppingCart: PropTypes.array,
+    cart: PropTypes.array,
 }
 
 export default ShoppingCartView;
