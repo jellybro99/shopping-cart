@@ -1,23 +1,18 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ErrorPage from "./components/ErrorPage";
+import { Outlet } from "react-router-dom";
+import { useState } from "react"
 import Navbar from "./components/Navbar";
 
 function App() {
+  const [cart, setCart] = useState("");
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <div>hi</div>,
-      errorElement: <ErrorPage/>
-    }
-  ])
-  
-  return (
-    <>
-      <Navbar/>
-      <RouterProvider router={router}/>
-    </>
-  )
+    return (
+        <>
+            <Navbar cart={cart}/>
+            <main>
+                <Outlet />
+            </main>
+        </>
+    )
 }
 
 export default App;

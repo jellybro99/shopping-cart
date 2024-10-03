@@ -1,7 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+import ErrorPage from './components/ErrorPage';
 import App from './App';
+import HomePage from './components/HomePage';
+import ProductsPage from './components/ProductsPage';
+
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
   box-sizing: border-box;
@@ -28,10 +33,32 @@ const GlobalStyle = createGlobalStyle`
     isolation: isolate;
   }
 `
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+    errorElement: <ErrorPage/>,
+    children: [
+      {
+        errorElement: <ErrorPage/>,
+        children: [
+          {
+            index: true,
+            element: <HomePage/>,
+          },
+          {
+            path: "products/:productId?",
+            element: <ProductsPage/>,
+          }
+        ]
+      }
+    ]
+  }
+])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <GlobalStyle/>
-    <App/>
+    <RouterProvider router={router}/>
   </StrictMode>,
 )

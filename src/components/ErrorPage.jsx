@@ -2,11 +2,7 @@ import { useRouteError } from "react-router-dom";
 import styled from "styled-components";
 import img from "../assets/boowomp.png";
 
-function ErrorPage() {
-    const error = useRouteError();
-    console.error(error);
-
-    const ErrorDiv = styled.div`
+const ErrorDiv = styled.div`
         display:flex;
         justify-content:center;
         width:100%;
@@ -16,6 +12,10 @@ function ErrorPage() {
     const ImageStyling = styled.img`
         width:500px;
     `
+
+function ErrorPage() {
+    const error = useRouteError();
+    console.error(error);
     
     return (
         <ErrorDiv>
