@@ -4,8 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import ErrorPage from './components/ErrorPage';
 import App from './App';
-import HomePage from './components/Home';
-import ProductsPage from './components/Products';
+import Home from './components/Home';
+import Products from './components/Products';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -44,11 +44,11 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <HomePage/>,
+            element: <Home/>,
           },
           {
             path: "products/:productId?",
-            element: <ProductsPage/>,
+            element: <Products/>,
           }
         ]
       }

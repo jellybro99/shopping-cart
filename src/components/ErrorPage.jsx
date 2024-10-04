@@ -7,9 +7,9 @@ const ErrorDiv = styled.div`
         justify-content:center;
         width:100%;
         height:100%;
-    `
+`
 
-    const ImageStyling = styled.img`
+const ImageStyling = styled.img`
         width:500px;
     `
 

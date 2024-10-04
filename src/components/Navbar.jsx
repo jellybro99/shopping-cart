@@ -20,19 +20,24 @@ const Links = styled.div`
     gap:1rem;
 `
 
+const StyledLink = styled(Link)`
+    text-decoration:none;
+`
+
 function Navbar(props) {
     const { cart } = props;
     const [shoppingCartDisplay, setShoppingCartDisplay] = useState(false);
   
     return (
         <NavbarStyling>
-            <h1><Link to="/">nav bar</Link></h1>
+            <h1><StyledLink to="/">nav bar</StyledLink></h1>
             <Links>
-                <Link to="/">Home</Link>
-                <Link to="/products">Products</Link>
+                <StyledLink to="/">Home</StyledLink>
+                <StyledLink to="/products">Products</StyledLink>
             </Links>
-            <ShoppingCart onClick={() => setShoppingCartDisplay(!shoppingCartDisplay)}/>
+            <button type="button" onClick={() => setShoppingCartDisplay(!shoppingCartDisplay)}><ShoppingCart/></button>
             {shoppingCartDisplay && <ShoppingCartView cart={cart}/>}
+            
         </NavbarStyling>
     )
 }

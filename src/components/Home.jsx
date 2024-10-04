@@ -1,9 +1,9 @@
 
-function HomePage() {
+function Home() {
 
     return (
         <div>Home Page</div>
     )
 }
 
-export default HomePage;
+export default Home;
