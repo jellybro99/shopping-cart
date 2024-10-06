@@ -7,8 +7,7 @@ const Product = styled.div`
 
 function ProductDisplay(props) {
     const { product, handleClick } = props;
-    console.log(product);
-
+    
     return (
         <Product onClick={handleClick}>
             <img src={product.image}/>

@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import ErrorPage from './components/ErrorPage';
 import App from './App';
-import Home from './components/Home';
+import HomePage from './components/HomePage';
 import BrandPage from './components/BrandPage';
 import ProductPage from './components/ProductPage';
 
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Home/>,
+            element: <HomePage/>,
           },
           {
             path: "brand/:brandId",

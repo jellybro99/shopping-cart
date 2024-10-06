@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import PropTypes from "prop-types"
 import { ShoppingCart } from "lucide-react";
+import ShoppingCartView from "./ShoppingCartView";
 
 const NavbarStyling = styled.nav`
         background-color:green;
@@ -24,7 +25,7 @@ function Navbar(props) {
         <NavbarStyling>
             <h1><StyledLink to="/">nav bar</StyledLink></h1>
             <button type="button" onClick={() => setShoppingCartDisplay(!shoppingCartDisplay)}><ShoppingCart/></button>
-            {/*shoppingCartDisplay && <ShoppingCartView cart={cart}/>*/}
+            {shoppingCartDisplay && <ShoppingCartView cart={cart}/>}
             
         </NavbarStyling>
     )
