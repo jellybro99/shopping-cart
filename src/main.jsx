@@ -5,7 +5,8 @@ import { createGlobalStyle } from 'styled-components';
 import ErrorPage from './components/ErrorPage';
 import App from './App';
 import Home from './components/Home';
-//import products from './assets/products';
+import BrandPage from './components/BrandPage';
+import ProductPage from './components/ProductPage';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -48,14 +49,12 @@ const router = createBrowserRouter([
             element: <Home/>,
           },
           {
-            path: ":brand",
-            element: <Home/>,
-            children: [
-              {
-                path: ":productId",
-                element: <Home/>
-              }
-            ]
+            path: "brand/:brandId",
+            element: <BrandPage/>,
+          },
+          {
+            path: "brand/:brandId/product/:productId",
+            element: <ProductPage/>
           }
         ]
       }

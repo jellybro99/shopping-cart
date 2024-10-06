@@ -1,20 +1,14 @@
-import PropTypes from "prop-types"
+import { useOutletContext, useParams } from "react-router-dom";
 
-function ProductPage(props) {
-    const { product, handleCartAdd } = props;
+function ProductPage() {
+    const product = useOutletContext()[useParams().brandId -1].products[useParams().productId - 1];
 
     return (
         <div>
-            <img src={product.image}></img>
             <h1>{product.name}</h1>
-            <button onClick={handleCartAdd}>Add to cart</button>
+            <img src={product.image}/>
         </div>
     )
-}
-
-ProductPage.propTypes = {
-    product: PropTypes.object,
-    handleCartAdd: PropTypes.func
 }
 
 export default ProductPage

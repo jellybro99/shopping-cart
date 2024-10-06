@@ -1,13 +1,19 @@
 import PropTypes from "prop-types"
+import styled from "styled-components";
+
+const Product = styled.div`
+    width:10rem;
+`
 
 function ProductDisplay(props) {
-    const { product, handleClick } = props
+    const { product, handleClick } = props;
+    console.log(product);
 
     return (
-        <div onClick={handleClick}>
+        <Product onClick={handleClick}>
             <img src={product.image}/>
             <h1>{product.name}</h1>
-        </div>
+        </Product>
     )
 }
 
