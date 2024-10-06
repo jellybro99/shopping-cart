@@ -1,7 +1,7 @@
 import Carousel from "./Carousel";
 import { useOutletContext } from "react-router-dom";
 
-function Home() {
+function HomePage() {
     const brands = useOutletContext()[0]
 
     return (
@@ -12,4 +12,4 @@ function Home() {
     )
 }
 
-export default Home;
+export default HomePage;
