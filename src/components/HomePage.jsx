@@ -1,5 +1,5 @@
 import Carousel from "./Carousel";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
 
 function HomePage() {
     const brands = useOutletContext()[0]
@@ -7,7 +7,8 @@ function HomePage() {
     return (
         <div>
             Home Page
-            <Carousel brands={brands}/>    
+            <Carousel brands={brands}/>
+            <Link to="brands">View All</Link>
         </div>
     )
 }

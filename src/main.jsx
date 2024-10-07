@@ -7,6 +7,7 @@ import App from './App';
 import HomePage from './components/HomePage';
 import BrandPage from './components/BrandPage';
 import ProductPage from './components/ProductPage';
+import BrandsPage from './components/BrandsPage';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
           {
             path: "brand/:brandId",
             element: <BrandPage/>,
+          },
+          {
+            path: "brands",
+            element: <BrandsPage/>
           },
           {
             path: "brand/:brandId/product/:productId",
