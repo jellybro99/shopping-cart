@@ -30,7 +30,7 @@ function Carousel(props) {
                 key={brand.id} 
                 src={brand.image}
                 alt={brand.name} 
-                onClick={()=>navigate("/brand/" + brand.id)} 
+                onClick={()=>navigate("/brand/" + brand.id)}
             />)}
         </CarouselDiv>
     )

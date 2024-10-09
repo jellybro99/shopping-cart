@@ -48,7 +48,7 @@ const brands = [
     {
       id: 3,
       name: "Never Stop Looking Up",
-      image: "\\src\\assets\\productImages\\never-stop-looking-up.jpg",
+      image: "\\src\\assets\\productImages\\never-stop-looking-up.webp",
       products: [
         {
           id: 1,

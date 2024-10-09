@@ -18,14 +18,14 @@ const StyledLink = styled(Link)`
 `
 
 function Navbar(props) {
-    const { cart } = props;
+    const { cart, brands } = props;
     const [shoppingCartDisplay, setShoppingCartDisplay] = useState(false);
-  
+
     return (
         <NavbarStyling>
             <h1><StyledLink to="/">nav bar</StyledLink></h1>
             <button type="button" onClick={() => setShoppingCartDisplay(!shoppingCartDisplay)}><ShoppingCart/></button>
-            {shoppingCartDisplay && <ShoppingCartView cart={cart}/>}
+            {shoppingCartDisplay && <ShoppingCartView cart={cart} brands={brands}/>}
             
         </NavbarStyling>
     )
@@ -33,6 +33,7 @@ function Navbar(props) {
 
 Navbar.propTypes = {
     cart: PropTypes.array,
+    brands: PropTypes.array
 }
 
 export default Navbar;
