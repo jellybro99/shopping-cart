@@ -9,7 +9,7 @@ const ShoppingCart = styled.div`
 `
 
 function ShoppingCartView(props) {
-    const { cart, brands } = props;
+    const { cart, brands} = props;
 
     return (
         <ShoppingCart>
@@ -20,7 +20,8 @@ function ShoppingCartView(props) {
 
 ShoppingCartView.propTypes = {
     cart: PropTypes.array,
-    brands: PropTypes.array
+    brands: PropTypes.array,
+    modalRef: PropTypes.object
 }
 
 export default ShoppingCartView;

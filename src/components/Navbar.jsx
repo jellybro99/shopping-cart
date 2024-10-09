@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types"
 import { ShoppingCart } from "lucide-react";
 import ShoppingCartView from "./ShoppingCartView";
@@ -20,12 +20,18 @@ const StyledLink = styled(Link)`
 function Navbar(props) {
     const { cart, brands } = props;
     const [shoppingCartDisplay, setShoppingCartDisplay] = useState(false);
+    const location = useLocation();
 
+    useEffect(() => {
+        setShoppingCartDisplay(false);
+        () => setShoppingCartDisplay(false);
+    }, [location])
+    
     return (
         <NavbarStyling>
             <h1><StyledLink to="/">nav bar</StyledLink></h1>
             <button type="button" onClick={() => setShoppingCartDisplay(!shoppingCartDisplay)}><ShoppingCart/></button>
-            {shoppingCartDisplay && <ShoppingCartView cart={cart} brands={brands}/>}
+            {shoppingCartDisplay && <ShoppingCartView cart={cart} brands={brands} />}
             
         </NavbarStyling>
     )
