@@ -1,12 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useState } from "react"
 import Navbar from "./components/Navbar";
 import brands from "./assets/brands";
 
 
 function App() {
-    const [cart, setCart] = useState([]);
-    
+    const [cart, setCart] = useState(localStorage.getItem("shoppingCart") != null? JSON.parse(localStorage.getItem("shoppingCart")) : []);
+    const navigate = useNavigate();
 
     const handleShoppingCartAdd = (brandId, productId) => { //need to test this
         const newCart = JSON.parse(JSON.stringify(cart));
@@ -25,12 +25,21 @@ function App() {
                 amount: 1
             })
         }
+        localStorage.setItem("shoppingCart", JSON.stringify(newCart));
         setCart(newCart);
+    }
+
+    const handleCheckout = () => {
+        localStorage.clear();
+        setCart([]);
+
+        //handle checkout
+        navigate("/");
     }
     
     return (
         <>
-            <Navbar cart={cart} setCart={setCart} brands={brands}/>
+            <Navbar cart={cart} setCart={setCart} brands={brands} handleCheckout={handleCheckout}/>
             <main >
                 <Outlet context={[brands, (brandId, productId) => handleShoppingCartAdd(brandId, productId)]}/>
             </main>
