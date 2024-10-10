@@ -20,6 +20,11 @@ const brands = [
           id: 3,
           name: "Tooth Fairy Shirt",
           image: "\\src\\assets\\productImages\\tooth-fairy-shirt.webp"
+        },
+        {
+          id: 4,
+          name: "Dental Hy-Jean Jacket",
+          image: "\\src\\assets\\productImages\\dental-hy-jean-jacket.webp"
         }
       ]
     },
@@ -35,11 +40,16 @@ const brands = [
         },
         {
           id: 2,
+          name: "I Saw Andrew Mark Bennett Shirt",
+          image: "\\src\\assets\\productImages\\i-saw-andrew-mark-bennett.webp"
+        },
+        {
+          id: 3,
           name: "jellyboys halloween special",
           image: ""
         },
         {
-          id: 3,
+          id: 4,
           name: "jellytape #1",
           image: ""
         }

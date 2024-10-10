@@ -6,15 +6,38 @@ import { ShoppingCart } from "lucide-react";
 import ShoppingCartView from "./ShoppingCartView";
 
 const NavbarStyling = styled.nav`
-        background-color:green;
-        display:flex;
-        flex-direction:row;
-        justify-content: space-between;
-        align-items:center;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-top: .15rem;
+    padding-bottom: .15rem;
+    background-color: #5A5A5A;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items:center;
+    border:solid black 1px;
+    border-radius:.5rem;
+    box-shadow: black 0 0 4px 0;
+    z-index: 1;
+`
+
+const StyledShoppingCart = styled(ShoppingCart)`
+    cursor:pointer;
+    color:white;
+
+    &:hover {
+        color:#2de51f;
+    }
 `
 
 const StyledLink = styled(Link)`
     text-decoration:none;
+    color:white;
+    font-weight: 400;
+
+    &:hover {
+        color:#2de51f;
+    }
 `
 
 function Navbar(props) {
@@ -30,9 +53,13 @@ function Navbar(props) {
     return (
         <NavbarStyling>
             <h1><StyledLink to="/">nav bar</StyledLink></h1>
-            <button type="button" onClick={() => setShoppingCartDisplay(!shoppingCartDisplay)}><ShoppingCart/></button>
-            {shoppingCartDisplay && <ShoppingCartView cart={cart} brands={brands} handleCheckout={handleCheckout}/>}
-            
+            <StyledShoppingCart onClick={() => setShoppingCartDisplay(!shoppingCartDisplay)}/>
+            {shoppingCartDisplay && 
+            <ShoppingCartView 
+                cart={cart} 
+                brands={brands} 
+                handleCheckout={handleCheckout} 
+                close={() => setShoppingCartDisplay(false)}/>}
         </NavbarStyling>
     )
 }

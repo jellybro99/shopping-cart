@@ -2,7 +2,18 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { useState } from "react"
 import Navbar from "./components/Navbar";
 import brands from "./assets/brands";
+import styled from "styled-components";
 
+const FullPage = styled.div`
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background-color:slategray;
+`
+
+const Main = styled.main`
+    flex-grow:1;
+`
 
 function App() {
     const [cart, setCart] = useState(localStorage.getItem("shoppingCart") != null? JSON.parse(localStorage.getItem("shoppingCart")) : []);
@@ -38,12 +49,12 @@ function App() {
     }
     
     return (
-        <>
+        <FullPage>
             <Navbar cart={cart} setCart={setCart} brands={brands} handleCheckout={handleCheckout}/>
-            <main >
+            <Main>
                 <Outlet context={[brands, (brandId, productId) => handleShoppingCartAdd(brandId, productId)]}/>
-            </main>
-        </>
+            </Main>
+        </FullPage>
     )
 }
 

@@ -13,6 +13,9 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
+  html, body {
+    height:100%;
+  }
   img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;

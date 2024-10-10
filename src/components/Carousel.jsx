@@ -7,12 +7,6 @@ const CarouselDiv = styled.div`
         flex-direction:row;
         height: 15rem;
         justify-content:space-around;
-        border-color: blue;
-        border-style: solid;
-        border-left:0;
-        border-right:0;
-        border-radius:0.5rem;
-        margin: 1rem;
         background-color:gray;
     `
 
