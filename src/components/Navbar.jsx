@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types"
 import { ShoppingCart } from "lucide-react";
 import ShoppingCartView from "./ShoppingCartView";
+import Modal from "./Modal";
 
 const NavbarStyling = styled.nav`
     padding-left: .5rem;
@@ -16,7 +17,9 @@ const NavbarStyling = styled.nav`
     justify-content: space-between;
     align-items:center;
     border:solid black 1px;
-    border-radius:.5rem;
+    //border-radius:.5rem;
+    border-bottom-left-radius:.5rem;
+    border-bottom-right-radius:.5rem;
     box-shadow: black 0 0 4px 0;
     z-index: 1;
 `
@@ -55,11 +58,15 @@ function Navbar(props) {
             <h1><StyledLink to="/">nav bar</StyledLink></h1>
             <StyledShoppingCart onClick={() => setShoppingCartDisplay(!shoppingCartDisplay)}/>
             {shoppingCartDisplay && 
-            <ShoppingCartView 
-                cart={cart} 
-                brands={brands} 
-                handleCheckout={handleCheckout} 
-                close={() => setShoppingCartDisplay(false)}/>}
+            <Modal close={()=>setShoppingCartDisplay(false)}>
+                <ShoppingCartView
+                    cart={cart} 
+                    brands={brands} 
+                    handleCheckout={handleCheckout} 
+                    close={() => setShoppingCartDisplay(false)}/>
+            </Modal>
+            
+            }
         </NavbarStyling>
     )
 }

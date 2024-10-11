@@ -2,13 +2,12 @@ import PropTypes from "prop-types"
 import styled from "styled-components";
 
 const ShoppingCart = styled.div`
-    position:absolute;
-    top:0;
-    right:0;
-    padding:1rem;
-    background-color: orange;
-    opacity: 98%;
-    z-index:2;
+    width:30rem;
+    height:100%;
+    background-color:white;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
 `
 
 function ShoppingCartView(props) {
@@ -17,7 +16,9 @@ function ShoppingCartView(props) {
     return (
         <ShoppingCart>
             <button onClick={close}>close</button>
-            {cart.map((item) => <div key={item.key}>{brands[item.brand - 1].products[item.product - 1].name}: {item.amount}</div>)}
+            <div>
+                {cart.map((item) => <div key={item.key}>{brands[item.brand - 1].products[item.product - 1].name}: {item.amount}</div>)}
+            </div>
             <button onClick={handleCheckout}>checkout</button>
         </ShoppingCart>
     )
