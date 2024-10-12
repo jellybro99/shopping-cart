@@ -12,10 +12,12 @@ function ProductPage() {
     return (
         <div>
             <h1>{product.name}</h1>
-            <img src={product.image}/>
-            <button onClick={()=>handleCartAdd(brandId, productId)}>add to cart</button>
+            <img src={product.image} />
+            <button onClick={() => handleCartAdd(brandId, productId)}>
+                add to cart
+            </button>
         </div>
-    )
+    );
 }
 
-export default ProductPage
+export default ProductPage;

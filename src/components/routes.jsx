@@ -1,39 +1,39 @@
-import ErrorPage from './ErrorPage';
-import App from '../App';
-import HomePage from './HomePage';
-import BrandPage from './BrandPage';
-import ProductPage from './ProductPage';
-import BrandsPage from './BrandsPage';
+import ErrorPage from "./ErrorPage";
+import App from "../App";
+import HomePage from "./HomePage";
+import BrandPage from "./BrandPage";
+import ProductPage from "./ProductPage";
+import BrandsPage from "./BrandsPage";
 
 const routes = [
     {
         path: "/",
-        element: <App/>,
-        errorElement: <ErrorPage/>,
+        element: <App />,
+        errorElement: <ErrorPage />,
         children: [
             {
-                errorElement: <ErrorPage/>,
+                errorElement: <ErrorPage />,
                 children: [
                     {
                         index: true,
-                        element: <HomePage/>
+                        element: <HomePage />,
                     },
                     {
                         path: "brand/:brandId",
-                        element: <BrandPage/>,
+                        element: <BrandPage />,
                     },
                     {
                         path: "brands",
-                        element: <BrandsPage/>
+                        element: <BrandsPage />,
                     },
                     {
                         path: "brand/:brandId/product/:productId",
-                        element: <ProductPage/>
-                    }
-                ]
-            }
-        ]
-    }
-]
+                        element: <ProductPage />,
+                    },
+                ],
+            },
+        ],
+    },
+];
 
 export default routes;
