@@ -16,11 +16,11 @@ const NavbarStyling = styled.nav`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: solid black 1px;
+    //border: solid black 1px;
     //border-radius:.5rem;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    box-shadow: black 0 0 4px 0;
+    //border-bottom-left-radius: 0.5rem;
+    //border-bottom-right-radius: 0.5rem;
+    //box-shadow: black 0 0 4px 0;
     z-index: 1;
 `;
 
@@ -56,7 +56,7 @@ function Navbar(props) {
     return (
         <NavbarStyling>
             <h1>
-                <StyledLink to="/">nav bar</StyledLink>
+                <StyledLink to="/">jelly brothers</StyledLink>
             </h1>
             <StyledShoppingCart
                 onClick={() => setShoppingCartDisplay(!shoppingCartDisplay)}

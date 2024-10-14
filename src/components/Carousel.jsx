@@ -1,16 +1,18 @@
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import Image from "./Image";
 
 const CarouselDiv = styled.div`
     display: flex;
     flex-direction: row;
     height: 15rem;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10rem;
     background-color: gray;
 `;
 
-const CarouselItem = styled.img`
+const CarouselItem = styled(Image)`
     cursor: pointer;
 `;
 

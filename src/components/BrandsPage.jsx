@@ -1,5 +1,6 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
 import styled from "styled-components";
+import Image from "./Image";
 
 const Brand = styled.div``;
 
@@ -14,7 +15,7 @@ function BrandsPage() {
                     key={brand.id}
                     onClick={() => navigate("/brand/" + brand.id)}
                 >
-                    <img src={brand.image} />
+                    <Image src={brand.image} />
                     <h1>{brand.name}</h1>
                 </Brand>
             ))}

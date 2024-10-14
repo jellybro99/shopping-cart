@@ -2,12 +2,22 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const ShoppingCart = styled.div`
+    padding: 1rem;
     width: 30rem;
     height: 100%;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
+`;
+
+const Items = styled.div``;
+
+const Item = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 `;
 
 function ShoppingCartView(props) {
@@ -16,14 +26,14 @@ function ShoppingCartView(props) {
     return (
         <ShoppingCart>
             <button onClick={close}>close</button>
-            <div>
+            <Items>
                 {cart.map((item) => (
-                    <div key={item.key}>
+                    <Item key={item.key}>
+                        <div>{item.amount}</div>
                         {brands[item.brand - 1].products[item.product - 1].name}
-                        : {item.amount}
-                    </div>
+                    </Item>
                 ))}
-            </div>
+            </Items>
             <button onClick={handleCheckout}>checkout</button>
         </ShoppingCart>
     );

@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Image from "./Image";
 
 const Product = styled.div`
     width: 10rem;
@@ -10,7 +11,7 @@ function ProductDisplay(props) {
 
     return (
         <Product onClick={handleClick}>
-            <img src={product.image} />
+            <Image src={product.image} />
             <h1>{product.name}</h1>
         </Product>
     );

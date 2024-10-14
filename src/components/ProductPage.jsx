@@ -1,4 +1,5 @@
 import { useOutletContext, useParams } from "react-router-dom";
+import Image from "./Image";
 
 function ProductPage() {
     const brands = useOutletContext()[0];
@@ -12,7 +13,7 @@ function ProductPage() {
     return (
         <div>
             <h1>{product.name}</h1>
-            <img src={product.image} />
+            <Image src={product.image} />
             <button onClick={() => handleCartAdd(brandId, productId)}>
                 add to cart
             </button>

@@ -3,6 +3,7 @@ const brands = [
         id: 1,
         name: "Dental Hy-Jeans",
         image: "\\src\\assets\\productImages\\dental-hyjeans.webp",
+        about: "",
         products: [
             {
                 id: 1,
@@ -30,6 +31,7 @@ const brands = [
         id: 2,
         name: "jellyboys",
         image: "\\src\\assets\\productImages\\jellybro-graybackground.jpg",
+        about: "",
         products: [
             {
                 id: 1,
@@ -57,6 +59,7 @@ const brands = [
         id: 3,
         name: "Never Stop Looking Up",
         image: "\\src\\assets\\productImages\\never-stop-looking-up.webp",
+        about: "",
         products: [
             {
                 id: 1,
