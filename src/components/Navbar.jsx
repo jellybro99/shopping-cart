@@ -11,35 +11,30 @@ const NavbarStyling = styled.nav`
     padding-right: 0.5rem;
     padding-top: 0.15rem;
     padding-bottom: 0.15rem;
-    background-color: #5a5a5a;
+    background-color: #f5f5f5;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    //border: solid black 1px;
-    //border-radius:.5rem;
-    //border-bottom-left-radius: 0.5rem;
-    //border-bottom-right-radius: 0.5rem;
-    //box-shadow: black 0 0 4px 0;
     z-index: 1;
 `;
 
 const StyledShoppingCart = styled(ShoppingCart)`
     cursor: pointer;
-    color: white;
+    color: black;
 
     &:hover {
-        color: #2de51f;
+        color: #8ace00;
     }
 `;
 
 const StyledLink = styled(Link)`
     text-decoration: none;
-    color: white;
+    color: black;
     font-weight: 400;
 
     &:hover {
-        color: #2de51f;
+        color: #8ace00;
     }
 `;
 

@@ -8,7 +8,7 @@ const FullPage = styled.div`
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: slategray;
+    background-color: #f5f5f5;
 `;
 
 const Main = styled.main`

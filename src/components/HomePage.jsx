@@ -1,5 +1,5 @@
 import Carousel from "./Carousel";
-import { useOutletContext, Link } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledHomePage = styled.div`
@@ -16,7 +16,6 @@ function HomePage() {
         <StyledHomePage>
             <EmptySpace />
             <Carousel brands={brands} />
-            <Link to="brands">View All</Link>
         </StyledHomePage>
     );
 }
