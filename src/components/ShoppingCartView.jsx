@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Image from "./Image";
+import { useEffect } from "react";
 
 const ShoppingCart = styled.div`
     padding: 1rem;
@@ -45,6 +46,18 @@ const Checkout = styled.button`
 
 function ShoppingCartView(props) {
     const { cart, brands, handleCheckout, close } = props;
+
+    const handleKeyPress = (e) => {
+        if (e.key === "Escape") close();
+    };
+
+    useEffect(() => {
+        window.addEventListener("keydown", handleKeyPress);
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyPress);
+        };
+    }, []);
 
     return (
         <ShoppingCart>
