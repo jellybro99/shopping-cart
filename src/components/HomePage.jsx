@@ -6,7 +6,7 @@ const StyledHomePage = styled.div`
     height: 100%;
 `;
 const EmptySpace = styled.div`
-    height: 15rem;
+    height: 25vh;
 `;
 
 function HomePage() {

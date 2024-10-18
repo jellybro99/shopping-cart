@@ -10,8 +10,8 @@ function ProductDisplay(props) {
     const { product, handleClick } = props;
 
     return (
-        <Product onClick={handleClick}>
-            <Image src={product.image} />
+        <Product>
+            <Image src={product.image} onClick={handleClick} cursor="pointer" />
             <h1>{product.name}</h1>
         </Product>
     );

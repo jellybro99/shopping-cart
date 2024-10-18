@@ -17,7 +17,6 @@ const CarouselDiv = styled.div`
 const CarouselItem = styled(Image)`
     height: 15rem;
     width: 15rem;
-    cursor: pointer;
     box-shadow: #8ace0078 0 0 12px 0px;
     border-radius: 0.1rem;
 `;
@@ -27,7 +26,6 @@ const SideCarouselItem = styled(Image)`
     width: 10rem;
     opacity: 50%;
     box-shadow: #8ace0078 0 0 12px 0px;
-    cursor: pointer;
     border-radius: 0.1rem;
 `;
 
@@ -78,16 +76,19 @@ function Carousel(props) {
                 <SideCarouselItem
                     src={brands[prev].image}
                     alt={brands[prev].name}
+                    cursor="pointer"
                     onClick={() => navigate("/brand/" + brands[prev].id)}
                 />
                 <CarouselItem
                     src={brands[index].image}
                     alt={brands[index].name}
+                    cursor="pointer"
                     onClick={() => navigate("/brand/" + brands[index].id)}
                 />
                 <SideCarouselItem
                     src={brands[next].image}
                     alt={brands[next].name}
+                    cursor="pointer"
                     onClick={() => navigate("/brand/" + brands[next].id)}
                 />
                 <ChangeButton onClick={() => goPrev()}>{">"}</ChangeButton>

@@ -4,12 +4,18 @@ import Image from "./Image";
 
 const Brand = styled.div``;
 
+const BrandsDiv = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    justify-items: center;
+`;
+
 function BrandsPage() {
     const brands = useOutletContext()[0];
     const navigate = useNavigate();
 
     return (
-        <div>
+        <BrandsDiv>
             {brands.map((brand) => (
                 <Brand
                     key={brand.id}
@@ -19,7 +25,7 @@ function BrandsPage() {
                     <h1>{brand.name}</h1>
                 </Brand>
             ))}
-        </div>
+        </BrandsDiv>
     );
 }
 
