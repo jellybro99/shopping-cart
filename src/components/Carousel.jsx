@@ -19,6 +19,7 @@ const CarouselItem = styled(Image)`
     width: 15rem;
     box-shadow: #8ace0078 0 0 12px 0px;
     border-radius: 0.1rem;
+    border: solid #8ace00 1px;
 `;
 
 const SideCarouselItem = styled(Image)`
@@ -27,6 +28,7 @@ const SideCarouselItem = styled(Image)`
     opacity: 50%;
     box-shadow: #8ace0078 0 0 12px 0px;
     border-radius: 0.1rem;
+    border: solid #8ace00 1px;
 `;
 
 const ChangeButton = styled.button`

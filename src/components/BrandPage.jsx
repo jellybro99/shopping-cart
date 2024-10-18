@@ -1,17 +1,16 @@
 import PropTypes from "prop-types";
 import ProductDisplay from "./ProductDisplay";
 import styled from "styled-components";
-import {
-    Link,
-    useNavigate,
-    useOutletContext,
-    useParams,
-} from "react-router-dom";
+import Image from "./Image";
+
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 
 const Products = styled.div`
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     justify-items: center;
+    gap: 2rem;
 `;
 
 const BrandName = styled.h1`
@@ -20,6 +19,20 @@ const BrandName = styled.h1`
     margin-bottom: 2rem;
     font-weight: 400;
 `;
+
+const BrandPageDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    padding: 4rem;
+    gap: 2rem;
+    width: 100%;
+`;
+
+const About = styled.div`
+    width: 15rem;
+    flex-shrink: 0;
+`;
+
 function BrandPage() {
     const brandId = useParams().brandId;
     const brand = useOutletContext()[0][brandId - 1];
@@ -27,8 +40,11 @@ function BrandPage() {
     if (brand === undefined) throw new Response("Not Found", { status: 404 });
 
     return (
-        <div>
-            <BrandName>{brand.name}</BrandName>
+        <BrandPageDiv>
+            <About>
+                <BrandName>{brand.name}</BrandName>
+                <Image src={brand.image} />
+            </About>
             <Products>
                 {brand.products.map((product) => (
                     <div key={product.id}>
@@ -43,15 +59,10 @@ function BrandPage() {
                                 )
                             }
                         />
-                        <Link
-                            to={"/brand/" + brandId + "/product/" + product.id}
-                        >
-                            {product.name}
-                        </Link>
                     </div>
                 ))}
             </Products>
-        </div>
+        </BrandPageDiv>
     );
 }
 

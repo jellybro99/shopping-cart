@@ -63,8 +63,8 @@ const brands = [
         products: [
             {
                 id: 1,
-                name: "Become Oden Ceiling Poster",
-                image: "",
+                name: "Become Oden Poster",
+                image: "\\src\\assets\\productImages\\become-oden-poster.png",
             },
         ],
     },
