@@ -46,12 +46,17 @@ const brands = [
             {
                 id: 3,
                 name: "jellyboys halloween special",
-                image: "",
+                image: "\\src\\assets\\productImages\\jellyboys-halloween-special.jpg",
             },
             {
                 id: 4,
                 name: "jellytape #1",
-                image: "",
+                image: "\\src\\assets\\productImages\\jelly-tape-1.jpg",
+            },
+            {
+                id: 5,
+                name: "jellymonsters vs. aliens",
+                image: "\\src\\assets\\productImages\\jelly-monsters-vs-aliens.png",
             },
         ],
     },

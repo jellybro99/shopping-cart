@@ -17,7 +17,7 @@ const ProductImage = styled(Image)`
     border: solid gray 1px;
     &:hover {
         border-color: #8ace00;
-        box-shadow: 0px 0px 4px 0px #8ace00;
+        box-shadow: 0px 0px 10px 0px #8ace00;
     }
 `;
 
