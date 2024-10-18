@@ -22,9 +22,13 @@ const BrandName = styled.h1`
 const BrandPageDiv = styled.div`
     display: flex;
     flex-direction: row;
-    padding: 4rem;
+    padding: 2rem;
     gap: 2rem;
     width: 100%;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
 `;
 
 const About = styled.div`

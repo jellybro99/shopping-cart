@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 const StyledImage = styled.img`
     //need to figure out how to use props with styled css
     max-height: 100%;
+    aspect-ratio: 1/1;
     cursor: ${(props) => props.$cursor || "inherit"};
 `;
 

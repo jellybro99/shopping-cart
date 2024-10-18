@@ -2,12 +2,15 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 import styled from "styled-components";
 import Image from "./Image";
 
-const Brand = styled.div``;
+const Brand = styled.div`
+    width: 20rem;
+`;
 
 const BrandsDiv = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     justify-items: center;
+    padding: 2rem;
 `;
 
 function BrandsPage() {

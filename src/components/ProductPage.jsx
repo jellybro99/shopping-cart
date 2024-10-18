@@ -3,13 +3,14 @@ import Image from "./Image";
 import styled from "styled-components";
 
 const ProductPageDiv = styled.div`
-    padding-left: 3rem;
-    padding-right: 3rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem;
     display: flex;
     height: 50rem;
     gap: 2rem;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
 `;
 
 const SideArea = styled.div`

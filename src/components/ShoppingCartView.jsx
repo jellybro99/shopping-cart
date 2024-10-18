@@ -16,7 +16,11 @@ const ShoppingCart = styled.div`
     border: solid black 1px;
 `;
 
-const Items = styled.div``;
+const Items = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+`;
 
 const Item = styled.div`
     display: grid;
