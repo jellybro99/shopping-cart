@@ -31,7 +31,7 @@ const brands = [
         id: 2,
         name: "jellyboys",
         image: "\\src\\assets\\productImages\\jellybro-graybackground.jpg",
-        about: "",
+        about: "blah, blah, blah",
         products: [
             {
                 id: 1,

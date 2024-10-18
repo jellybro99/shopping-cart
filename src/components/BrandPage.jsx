@@ -16,7 +16,6 @@ const Products = styled.div`
 const BrandName = styled.h1`
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
     font-weight: 400;
 `;
 
@@ -31,6 +30,9 @@ const BrandPageDiv = styled.div`
 const About = styled.div`
     width: 15rem;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 `;
 
 function BrandPage() {
@@ -44,6 +46,7 @@ function BrandPage() {
             <About>
                 <BrandName>{brand.name}</BrandName>
                 <Image src={brand.image} />
+                <p>{brand.about}</p>
             </About>
             <Products>
                 {brand.products.map((product) => (
