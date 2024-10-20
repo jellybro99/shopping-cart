@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Image from "./Image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const CarouselDiv = styled.div`
     display: flex;
@@ -10,7 +10,7 @@ const CarouselDiv = styled.div`
     height: 15rem;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 2rem;
     margin-bottom: 1rem;
 `;
 
@@ -54,9 +54,19 @@ function Carousel(props) {
     const { brands } = props;
     const navigate = useNavigate();
     const [index, setIndex] = useState(0);
+    const [small, setSmall] = useState(window.innerWidth < 800);
 
     const prev = (index + brands.length - 1) % brands.length;
     const next = (index + 1) % brands.length;
+
+    const updateMedia = () => {
+        setSmall(window.innerWidth < 800);
+    };
+
+    useEffect(() => {
+        window.addEventListener("resize", updateMedia);
+        return () => window.removeEventListener("resize", updateMedia);
+    });
 
     const goNext = () => {
         setIndex(next);
@@ -69,14 +79,18 @@ function Carousel(props) {
     return (
         <>
             <CarouselDiv>
-                <ChangeButton onClick={() => goNext()}>{"<"}</ChangeButton>
-                <SideCarouselItem
-                    shadow={true}
-                    src={brands[prev].image}
-                    alt={brands[prev].name}
-                    pointer={true}
-                    onClick={() => navigate("/brand/" + brands[prev].id)}
-                />
+                {!small && (
+                    <ChangeButton onClick={() => goNext()}>{"<"}</ChangeButton>
+                )}
+                {!small && (
+                    <SideCarouselItem
+                        shadow={true}
+                        src={brands[prev].image}
+                        alt={brands[prev].name}
+                        pointer={true}
+                        onClick={() => navigate("/brand/" + brands[prev].id)}
+                    />
+                )}
                 <CarouselItem
                     shadow={true}
                     src={brands[index].image}
@@ -84,19 +98,29 @@ function Carousel(props) {
                     pointer={true}
                     onClick={() => navigate("/brand/" + brands[index].id)}
                 />
-                <SideCarouselItem
-                    shadow={true}
-                    src={brands[next].image}
-                    alt={brands[next].name}
-                    pointer={true}
-                    onClick={() => navigate("/brand/" + brands[next].id)}
-                />
-                <ChangeButton onClick={() => goPrev()}>{">"}</ChangeButton>
+                {!small && (
+                    <SideCarouselItem
+                        shadow={true}
+                        src={brands[next].image}
+                        alt={brands[next].name}
+                        pointer={true}
+                        onClick={() => navigate("/brand/" + brands[next].id)}
+                    />
+                )}
+                {!small && (
+                    <ChangeButton onClick={() => goPrev()}>{">"}</ChangeButton>
+                )}
             </CarouselDiv>
             <CenteredDiv>
+                {small && (
+                    <ChangeButton onClick={() => goNext()}>{"<"}</ChangeButton>
+                )}
                 <StyledButton onClick={() => navigate("/brands/")}>
                     View All
                 </StyledButton>
+                {small && (
+                    <ChangeButton onClick={() => goPrev()}>{">"}</ChangeButton>
+                )}
             </CenteredDiv>
         </>
     );
