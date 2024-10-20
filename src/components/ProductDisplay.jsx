@@ -15,16 +15,6 @@ const Link = styled.h2`
     }
 `;
 
-// const ProductImage = styled(Image)`
-//     border: solid gray 1px;
-//     cursor: pointer;
-//     box-shadow: 0px 0px 10px 0px gray;
-//     &:hover {
-//         border-color: #8ace00;
-//         box-shadow: 0px 0px 10px 0px #8ace00;
-//     }
-// `;
-
 function ProductDisplay(props) {
     const { product, handleClick } = props;
 

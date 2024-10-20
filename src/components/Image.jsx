@@ -5,16 +5,17 @@ const StyledImage = styled.img`
     //need to figure out how to use props with styled css
     max-height: 100%;
     aspect-ratio: 1/1;
+    border-radius: 0.1rem;
     cursor: ${(props) => (props.$pointer ? "pointer" : "default")};
 
     ${(props) =>
         props.$shadow
             ? `
-        border: solid gray 1px;
-        box-shadow: 0px 0px 10px 0px gray;
+        border: solid rgb(10, 10, 10, 0.3) 1px;
+        box-shadow: 1px 1px 10px 4px rgb(10, 10, 10, 0.2);
             &:hover {
-            border-color: #8ace00;
-            box-shadow: 0px 0px 10px 0px #8ace00;
+            border-color: rgb(138,206,0);
+            box-shadow: 1px 1px 10px 4px rgb(138, 206 ,0 , 0.5);
     }
     `
             : null}

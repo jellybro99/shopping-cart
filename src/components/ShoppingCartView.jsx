@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Image from "./Image";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ShoppingCart = styled.div`
     padding: 1rem;
@@ -31,7 +32,7 @@ const Item = styled.div`
 `;
 
 const Close = styled.button`
-    background-color: #8ace00;
+    background-color: rgb(138, 206, 0);
     align-self: flex-end;
     height: 2rem;
     width: 2rem;
@@ -44,12 +45,13 @@ const Checkout = styled.button`
     cursor: pointer;
     background: none;
     &:hover {
-        background-color: #8ace00;
+        background-color: rgb(138, 206, 0);
     }
 `;
 
 function ShoppingCartView(props) {
     const { cart, brands, handleCheckout, close } = props;
+    const navigate = useNavigate();
 
     const handleKeyPress = (e) => {
         if (e.key === "Escape") close();
@@ -75,6 +77,15 @@ function ShoppingCartView(props) {
                                     item.product - 1
                                 ].image
                             }
+                            onClick={() =>
+                                navigate(
+                                    "/brand/" +
+                                        item.brand +
+                                        "/product/" +
+                                        item.product
+                                )
+                            }
+                            pointer={true}
                         />
                         <div>{item.amount}:</div>
                         <div>

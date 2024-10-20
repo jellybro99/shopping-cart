@@ -11,7 +11,6 @@ const NavbarStyling = styled.nav`
     padding-right: 0.5rem;
     padding-top: 0.15rem;
     padding-bottom: 0.15rem;
-    background-color: #f5f5f5;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -24,7 +23,7 @@ const StyledShoppingCart = styled(ShoppingCart)`
     color: black;
 
     &:hover {
-        color: #8ace00;
+        color: rgb(138, 206, 0);
     }
 `;
 
@@ -34,7 +33,7 @@ const StyledLink = styled(Link)`
     font-weight: 400;
 
     &:hover {
-        color: #8ace00;
+        color: rgb(138, 206, 0);
     }
 `;
 
