@@ -30,7 +30,6 @@ const AddToCart = styled.button`
 `;
 
 const StyledImage = styled(Image)`
-    border: solid black 1px;
     height: 20rem;
 `;
 
@@ -45,7 +44,7 @@ function ProductPage() {
 
     return (
         <ProductPageDiv>
-            <StyledImage src={product.image} />
+            <StyledImage shadow={true} src={product.image} />
             <SideArea>
                 <h1>{product.name}</h1>
                 <p>{product.about}</p>

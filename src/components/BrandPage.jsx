@@ -49,7 +49,7 @@ function BrandPage() {
         <BrandPageDiv>
             <About>
                 <BrandName>{brand.name}</BrandName>
-                <Image src={brand.image} />
+                <Image shadow={true} src={brand.image} />
                 <p>{brand.about}</p>
             </About>
             <Products>

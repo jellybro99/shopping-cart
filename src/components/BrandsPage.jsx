@@ -19,15 +19,6 @@ const BrandName = styled.h1`
     font-weight: 500;
 `;
 
-const StyledImage = styled(Image)`
-    border: solid gray 1px;
-    cursor: pointer;
-    &:hover {
-        border-color: #8ace00;
-        box-shadow: 0px 0px 10px 0px #8ace00;
-    }
-`;
-
 function BrandsPage() {
     const brands = useOutletContext()[0];
     const navigate = useNavigate();
@@ -36,7 +27,9 @@ function BrandsPage() {
         <BrandsDiv>
             {brands.map((brand) => (
                 <Brand key={brand.id}>
-                    <StyledImage
+                    <Image
+                        shadow={true}
+                        pointer={true}
                         src={brand.image}
                         onClick={() => navigate("/brand/" + brand.id)}
                     />
