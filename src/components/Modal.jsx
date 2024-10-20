@@ -15,7 +15,7 @@ const ModalContainer = styled.div`
 `;
 
 function Modal(props) {
-    const { children, close } = props;
+    const { children, close, ...modalProps } = props;
     const modalRef = useRef();
 
     const handleClick = (e) => {
@@ -23,7 +23,11 @@ function Modal(props) {
     };
 
     return (
-        <ModalContainer onClick={(e) => handleClick(e)} ref={modalRef}>
+        <ModalContainer
+            onClick={(e) => handleClick(e)}
+            ref={modalRef}
+            {...modalProps}
+        >
             {children}
         </ModalContainer>
     );

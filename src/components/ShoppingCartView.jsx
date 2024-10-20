@@ -1,8 +1,20 @@
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import Image from "./Image";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+const slideInFromRight = keyframes`
+    from {
+        transform: translate(100%);
+    }
+`;
+
+const slideOutToRight = keyframes`
+    to {
+        transform: translate(100%);
+    }
+`;
 
 const ShoppingCart = styled.div`
     padding: 1rem;
@@ -15,6 +27,14 @@ const ShoppingCart = styled.div`
     gap: 1rem;
     overflow-y: scroll;
     border: solid black 1px;
+    animation: ${(props) =>
+        props.$close
+            ? css`
+                  ${slideOutToRight} 0.3s ease-in 1;
+              `
+            : css`
+                  ${slideInFromRight} 0.3s ease-out 1;
+              `};
 `;
 
 const Items = styled.div`
@@ -52,7 +72,7 @@ const Checkout = styled.button`
 `;
 
 function ShoppingCartView(props) {
-    const { cart, brands, handleCheckout, close } = props;
+    const { cart, brands, handleCheckout, close, closeAnimation } = props;
     const navigate = useNavigate();
 
     const handleKeyPress = (e) => {
@@ -68,7 +88,7 @@ function ShoppingCartView(props) {
     });
 
     return (
-        <ShoppingCart>
+        <ShoppingCart $close={closeAnimation}>
             <Close onClick={close}>X</Close>
             <Items>
                 {cart.map((item) => (
@@ -110,6 +130,7 @@ ShoppingCartView.propTypes = {
     brands: PropTypes.array,
     handleCheckout: PropTypes.func,
     close: PropTypes.func,
+    closeAnimation: PropTypes.bool,
 };
 
 export default ShoppingCartView;

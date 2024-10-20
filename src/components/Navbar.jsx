@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { ShoppingCart } from "lucide-react";
 import ShoppingCartView from "./ShoppingCartView";
@@ -40,28 +40,35 @@ const StyledLink = styled(Link)`
 function Navbar(props) {
     const { cart, brands, handleCheckout } = props;
     const [shoppingCartDisplay, setShoppingCartDisplay] = useState(false);
-    const location = useLocation();
+    const [animationClose, setAnimationClose] = useState(false);
 
-    useEffect(() => {
-        setShoppingCartDisplay(false);
-        () => setShoppingCartDisplay(false);
-    }, [location]);
+    const handleShoppingCartToggle = () => {
+        if (shoppingCartDisplay) {
+            setAnimationClose(true);
+            setTimeout(() => {
+                setShoppingCartDisplay(!shoppingCartDisplay);
+                setAnimationClose(false);
+            }, 280);
+        } else {
+            setAnimationClose(false);
+            setShoppingCartDisplay(!shoppingCartDisplay);
+        }
+    };
 
     return (
         <NavbarStyling>
             <h1>
                 <StyledLink to="/">jelly brothers</StyledLink>
             </h1>
-            <StyledShoppingCart
-                onClick={() => setShoppingCartDisplay(!shoppingCartDisplay)}
-            />
+            <StyledShoppingCart onClick={() => handleShoppingCartToggle()} />
             {shoppingCartDisplay && (
-                <Modal close={() => setShoppingCartDisplay(false)}>
+                <Modal close={() => handleShoppingCartToggle()}>
                     <ShoppingCartView
+                        closeAnimation={animationClose}
                         cart={cart}
                         brands={brands}
                         handleCheckout={handleCheckout}
-                        close={() => setShoppingCartDisplay(false)}
+                        close={() => handleShoppingCartToggle()}
                     />
                 </Modal>
             )}
