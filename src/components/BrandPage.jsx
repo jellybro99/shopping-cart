@@ -26,7 +26,7 @@ const BrandPageDiv = styled.div`
     gap: 2rem;
     width: 100%;
 
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
         flex-direction: column;
     }
 `;
@@ -37,6 +37,10 @@ const About = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    @media (max-width: 800px) {
+        align-self: center;
+    }
 `;
 
 function BrandPage() {
