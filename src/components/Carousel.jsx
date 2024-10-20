@@ -17,14 +17,12 @@ const CarouselDiv = styled.div`
 const CarouselItem = styled(Image)`
     height: 15rem;
     width: 15rem;
-    border-radius: 0.1rem;
 `;
 
 const SideCarouselItem = styled(Image)`
     height: 10rem;
     width: 10rem;
     opacity: 50%;
-    border-radius: 0.1rem;
 `;
 
 const ChangeButton = styled.button`
@@ -44,6 +42,7 @@ const CenteredDiv = styled.div`
 const StyledButton = styled.button`
     background: none;
     border: solid black 1px;
+    border-radius: 0.1rem;
     width: 10rem;
     cursor: pointer;
     &:hover {

@@ -5,7 +5,7 @@ const StyledImage = styled.img`
     //need to figure out how to use props with styled css
     max-height: 100%;
     aspect-ratio: 1/1;
-    border-radius: 0.1rem;
+    border-radius: 0.5%;
     cursor: ${(props) => (props.$pointer ? "pointer" : "default")};
 
     ${(props) =>

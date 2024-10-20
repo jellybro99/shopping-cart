@@ -36,11 +36,13 @@ const Close = styled.button`
     align-self: flex-end;
     height: 2rem;
     width: 2rem;
+    border-radius: 0.1rem;
     cursor: pointer;
 `;
 
 const Checkout = styled.button`
     align-self: center;
+    border-radius: 0.1rem;
     width: 100%;
     cursor: pointer;
     background: none;
@@ -63,7 +65,7 @@ function ShoppingCartView(props) {
         return () => {
             window.removeEventListener("keydown", handleKeyPress);
         };
-    }, []);
+    });
 
     return (
         <ShoppingCart>

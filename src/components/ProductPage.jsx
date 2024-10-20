@@ -6,8 +6,9 @@ const ProductPageDiv = styled.div`
     padding: 2rem;
     display: flex;
     gap: 2rem;
+    height: 100%;
 
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
         flex-direction: column;
     }
 `;
@@ -17,6 +18,11 @@ const SideArea = styled.div`
     flex-direction: column;
     gap: 2rem;
     flex-grow: 1;
+
+    @media (max-width: 800px) {
+        justify-content: center;
+        text-align: center;
+    }
 `;
 
 const AddToCart = styled.button`
@@ -27,10 +33,18 @@ const AddToCart = styled.button`
     &:hover {
         background-color: #8ace00;
     }
+    @media (max-width: 800px) {
+        align-self: center;
+    }
 `;
 
 const StyledImage = styled(Image)`
-    height: 20rem;
+    max-height: 25rem;
+    max-width: 25rem;
+
+    @media (max-width: 800px) {
+        align-self: center;
+    }
 `;
 
 function ProductPage() {
