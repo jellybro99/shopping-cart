@@ -5,7 +5,6 @@ import styled from "styled-components";
 const ProductPageDiv = styled.div`
     padding: 2rem;
     display: flex;
-    height: 50rem;
     gap: 2rem;
 
     @media (max-width: 600px) {
@@ -17,11 +16,12 @@ const SideArea = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    flex-grow: 1;
 `;
 
 const AddToCart = styled.button`
-    align-self: center;
-    width: 100%;
+    align-self: flex-start;
+    width: 20rem;
     cursor: pointer;
     background: none;
     &:hover {
@@ -31,6 +31,7 @@ const AddToCart = styled.button`
 
 const StyledImage = styled(Image)`
     border: solid black 1px;
+    height: 20rem;
 `;
 
 function ProductPage() {
