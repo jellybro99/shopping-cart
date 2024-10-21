@@ -28,7 +28,7 @@ function Image(props) {
         <StyledImage
             $pointer={pointer}
             $shadow={shadow}
-            src={src == "" ? "\\src\\assets\\image-not-found.jpg" : src}
+            src={src == "" ? "/src/assets/image-not-found.jpg" : src}
             {...ImageProps}
             loading="lazy"
         />
