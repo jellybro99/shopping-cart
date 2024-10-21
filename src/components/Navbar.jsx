@@ -48,7 +48,7 @@ function Navbar(props) {
             setTimeout(() => {
                 setShoppingCartDisplay(!shoppingCartDisplay);
                 setAnimationClose(false);
-            }, 280);
+            }, 285);
         } else {
             setAnimationClose(false);
             setShoppingCartDisplay(!shoppingCartDisplay);
