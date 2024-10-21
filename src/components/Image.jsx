@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import img from "../assets/image-not-found.jpg";
 
 const StyledImage = styled.img`
     //need to figure out how to use props with styled css
@@ -28,7 +29,7 @@ function Image(props) {
         <StyledImage
             $pointer={pointer}
             $shadow={shadow}
-            src={src == "" ? "/src/assets/image-not-found.jpg" : src}
+            src={src == "" ? img : src}
             {...ImageProps}
             loading="lazy"
         />
