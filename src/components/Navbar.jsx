@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { ShoppingCart } from "lucide-react";
 import ShoppingCartView from "./ShoppingCartView";
@@ -41,6 +41,7 @@ function Navbar(props) {
     const { cart, brands, handleCheckout } = props;
     const [shoppingCartDisplay, setShoppingCartDisplay] = useState(false);
     const [animationClose, setAnimationClose] = useState(false);
+    const location = useLocation();
 
     const handleShoppingCartToggle = () => {
         if (shoppingCartDisplay) {
@@ -54,6 +55,11 @@ function Navbar(props) {
             setShoppingCartDisplay(!shoppingCartDisplay);
         }
     };
+
+    useEffect(() => {
+        setShoppingCartDisplay(false);
+        () => setShoppingCartDisplay(false);
+    }, [location]);
 
     return (
         <NavbarStyling>
