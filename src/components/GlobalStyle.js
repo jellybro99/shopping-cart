@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "Comic Sans MS";
+    src: url("public\COMIC.TTF");
+  }
   *, *::before, *::after {
   box-sizing: border-box;
   }
