@@ -2,35 +2,35 @@ const brands = [
     {
         id: 1,
         name: "Dental Hy-Jeans",
-        image: "\\src\\assets\\productImages\\dental-hyjeans.webp",
+        image: "\\public\\productImages\\dental-hyjeans.webp",
         about: "",
         products: [
             {
                 id: 1,
                 name: "Tooth Pants",
-                image: "\\src\\assets\\productImages\\tooth-jeans.webp",
+                image: "\\public\\productImages\\tooth-jeans.webp",
             },
             {
                 id: 2,
                 name: "Toothpaste Pants",
-                image: "\\src\\assets\\productImages\\toothpaste-jeans.webp",
+                image: "\\public\\productImages\\toothpaste-jeans.webp",
             },
             {
                 id: 3,
                 name: "Tooth Fairy Shirt",
-                image: "\\src\\assets\\productImages\\tooth-fairy-shirt.webp",
+                image: "\\public\\productImages\\tooth-fairy-shirt.webp",
             },
             {
                 id: 4,
                 name: "Dental Hy-Jean Jacket",
-                image: "\\src\\assets\\productImages\\dental-hy-jean-jacket.webp",
+                image: "\\public\\productImages\\dental-hy-jean-jacket.webp",
             },
         ],
     },
     {
         id: 2,
         name: "jellyboys",
-        image: "\\src\\assets\\productImages\\jellybro-graybackground.jpg",
+        image: "\\public\\productImages\\jellybro-graybackground.jpg",
         about: "blah, blah, blah",
         products: [
             {
@@ -41,35 +41,35 @@ const brands = [
             {
                 id: 2,
                 name: "I Saw Andrew Mark Bennett Shirt",
-                image: "\\src\\assets\\productImages\\i-saw-andrew-mark-bennett.webp",
+                image: "\\public\\productImages\\i-saw-andrew-mark-bennett.webp",
             },
             {
                 id: 3,
                 name: "jellyboys halloween special",
-                image: "\\src\\assets\\productImages\\jellyboys-halloween-special.jpg",
+                image: "\\public\\productImages\\jellyboys-halloween-special.jpg",
             },
             {
                 id: 4,
                 name: "jellytape #1",
-                image: "\\src\\assets\\productImages\\jelly-tape-1.jpg",
+                image: "\\public\\productImages\\jelly-tape-1.jpg",
             },
             {
                 id: 5,
                 name: "jellymonsters vs. aliens",
-                image: "\\src\\assets\\productImages\\jelly-monsters-vs-aliens.png",
+                image: "\\public\\productImages\\jelly-monsters-vs-aliens.png",
             },
         ],
     },
     {
         id: 3,
         name: "Never Stop Looking Up",
-        image: "\\src\\assets\\productImages\\never-stop-looking-up.webp",
+        image: "\\public\\productImages\\never-stop-looking-up.webp",
         about: "",
         products: [
             {
                 id: 1,
                 name: "Become Oden Poster",
-                image: "\\src\\assets\\productImages\\become-oden-poster.png",
+                image: "\\public\\productImages\\become-oden-poster.png",
             },
         ],
     },

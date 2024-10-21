@@ -10,7 +10,8 @@ const ErrorDiv = styled.div`
 `;
 
 const ImageStyling = styled.img`
-    width: 500px;
+    width: 100%;
+    height: 100%;
 `;
 
 function ErrorPage() {
